@@ -15,3 +15,11 @@ class Solution:
             prev = current
             current = temp
         return prev
+#recursive+
+class Solution:
+    def reverseList(self, head: Optional[ListNode], prev=None) -> Optional[ListNode]:
+        if (head == None):
+            return prev
+        temp = head.next
+        head.next = prev
+        return self.reverseList(temp, head)
