@@ -1,0 +1,11 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+        normal = str(x)
+        reverse = []
+        for i in reversed(range(len(normal))):
+            reverse.append(normal[i])
+        reverse = ''.join(reverse)
+        return normal == reverse
+    
