@@ -1,0 +1,16 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        maxium = 0
+        sub_string = ''
+        sub_len = 0
+        for i in range(len(s)):
+            if (s[i] not in sub_string):
+                sub_string += s[i]
+                sub_len += 1
+            else:
+                k = sub_string.index(s[i])
+                sub_string = sub_string[k+1:] + s[i]
+                sub_len = len(sub_string)
+            if sub_len > maxium:
+                maxium = sub_len
+        return maxium
